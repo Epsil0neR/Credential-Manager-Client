@@ -1,10 +1,9 @@
 import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 
-
-let win, serve;
+let win: Electron.BrowserWindow; 
 const args = process.argv.slice(1);
-serve = args.some(val => val === '--serve');
+let serve: Boolean = args.some(val => val === '--serve');
 
 if (serve) {
   require('electron-reload')(__dirname, {
@@ -18,12 +17,10 @@ function createWindow() {
 
   // Create the browser window.
   win = new BrowserWindow({
-    x: 0,
-    y: 0,
-    width: size.width,
-    height: size.height
+    width: 800,
+    height: 600
   });
-
+  win.center();
   // and load the index.html of the app.
   win.loadURL('file://' + __dirname + '/index.html');
 

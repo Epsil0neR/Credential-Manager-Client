@@ -10,7 +10,7 @@
 // }
 {
     "version": "0.1.0",
-    "command": "null",
+    "command": "myCommand",
     "isShellCommand": false,
     "args": [],
     "showOutput": "always",

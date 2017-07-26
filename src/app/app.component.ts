@@ -10,7 +10,7 @@ export class AppComponent {
   constructor(public electronService: ElectronService) {
 
     if (electronService.isElectron()) {
-      console.log('Mode electron 4');
+      console.log('Mode electron 1');
       // Check if electron is correctly injected (see externals in webpack.config.js)
       console.log('c', electronService.ipcRenderer);
       // Check if nodeJs childProcess is correctly injected (see externals in webpack.config.js)

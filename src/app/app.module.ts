@@ -1,3 +1,7 @@
+import { User } from './models/User';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AuthenticationService } from './services/Authentication.service';
 import 'zone.js/dist/zone-mix';
 import 'reflect-metadata';
 import 'polyfills';
@@ -9,22 +13,29 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routing } from './app-routing.module';
 
 import { ElectronService } from './providers/electron.service';
+import { AuthGuard } from './guards/auth.guard'
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    routing,
   ],
-  providers: [ElectronService],
+  providers: [
+    ElectronService,
+    AuthGuard,
+    AuthenticationService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
