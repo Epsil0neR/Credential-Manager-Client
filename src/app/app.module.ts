@@ -8,12 +8,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthenticationService } from './services/authentication.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { AppRoutingModule, routing } from './app-routing.module';
-import { AuthenticationService } from 'app/services/Authentication.service';
 
 import { ElectronService } from './providers/electron.service';
 import { AuthGuard } from './guards/auth.guard'

@@ -1,3 +1,4 @@
+import { User } from './../../models/User';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from 'app/services/authentication.service';
@@ -8,20 +9,17 @@ import { AuthenticationService } from 'app/services/authentication.service';
 })
 export class LoginComponent implements OnInit {
   returnUrl: string;
-  model: any;
+  model = new User();
   loading: boolean;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService
-  ) {
-    console.log('LOGIN: created');
-   }
+  ) {   }
 
   ngOnInit(): void {
     this.authenticationService.logout();
-    console.log('LOGIN: initialized');
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
