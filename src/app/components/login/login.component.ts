@@ -15,11 +15,13 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService
-  ) { }
+  ) {
+    console.log('LOGIN: created');
+   }
 
   ngOnInit(): void {
     this.authenticationService.logout();
-
+    console.log('LOGIN: initialized');
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 

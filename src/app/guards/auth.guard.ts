@@ -5,18 +5,18 @@ import { environment } from '../../environments/index'
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-    constructor(private router: Router) { }
+  constructor(private router: Router) { }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-        if (environment.Expires == null)
-            return false;
-
-        let now = Date.now();
-        let rv = environment.Expires.getTime() > now;
-
-        if (!rv)
-            this.router.navigate(['/login'])
-
-        return rv;
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
+    let rv = false;
+    if (environment.Expires != null) {
+      let now = Date.now();
+      rv = environment.Expires.getTime() > now;
     }
+
+    if (!rv)
+      this.router.navigate(['/login'])
+
+    return rv;
+  }
 }
