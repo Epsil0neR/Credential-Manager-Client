@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService
-  ) {   }
+  ) { }
 
   ngOnInit(): void {
     this.authenticationService.logout();
@@ -28,8 +28,9 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.model.username, this.model.password)
       .subscribe(
       data => {
-        // TODO: Update Expires
-        this.router.navigate([this.returnUrl]);
+        if (data) {
+          this.router.navigate([this.returnUrl]);
+        }
       },
       error => {
         this.loading = false;

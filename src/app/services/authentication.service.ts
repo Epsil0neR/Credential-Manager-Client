@@ -29,6 +29,7 @@ export class AuthenticationService {
   }
 
   logout() {
+    // TODO: Call API method /LogOut.
     environment.ApiKey = null;
     environment.Expires = null;
   }
