@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
       data => {
         if (data) {
           this.router.navigate([this.returnUrl]);
+        } else {
+          // TODO: Show message that login/password doesn't matches.
         }
       },
       error => {

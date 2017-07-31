@@ -1,0 +1,5 @@
+In API service always check response code (http status code)
+  Check if header Expires is good and ApiKey is known.
+  [ ] Provide method to check if response is OK and update local Expires
+
+In Header we will never get ApiKey, but always must come Expires (except single API request: LogOut)

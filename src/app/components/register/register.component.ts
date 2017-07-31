@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/index';
 import { Router } from '@angular/router';
 import { User } from './../../models/User';
 import { Component } from '@angular/core';
@@ -19,7 +20,7 @@ export class RegisterComponent {
   register() {
     this.authenticationService.register(this.model)
       .subscribe(
-      data => {
+      response => {
         // TODO: Update AuthKey and Expires
        },
       error => { }
