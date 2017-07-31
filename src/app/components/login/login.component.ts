@@ -2,6 +2,7 @@ import { User } from './../../models/User';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from 'app/services/authentication.service';
+import { AlertService } from './../../services/alert.service';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -37,6 +39,8 @@ export class LoginComponent implements OnInit {
       error => {
         this.loading = false;
         // TODO: Show message with details
+        console.log(error);
+        this.alertService.error(error);
       }
       )
   }

@@ -3,3 +3,23 @@ In API service always check response code (http status code)
   [ ] Provide method to check if response is OK and update local Expires
 
 In Header we will never get ApiKey, but always must come Expires (except single API request: LogOut)
+
+We need to handle all request responses to properly handle errors:
+  [ ] Check if ApiKey is still valid (except some requests)
+  [ ] Check if request has been handler (HTTP status code = 400)
+  [ ] In any case of error properly show error.
+
+API services must get API host from setting in Environment
+
+[ ] Modify globals/settings for environments
+[ ] All API urls must be declared in single place
+[ ] All API services must use URLs from previous ToDo item.
+[ ] All API services before sending request must check ApiKey and if that key is not expired.
+
+
+GUI:
+  [ ] Page for Login
+  [ ] Page for Registration
+  [ ] Home page for Groups and button to create new Group
+  [ ] Component for Group
+  [ ] Component for Credential
