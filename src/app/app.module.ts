@@ -21,6 +21,7 @@ import { AppRoutingModule, routing } from './app-routing.module';
 
 // Services
 import { ElectronService } from './providers/electron.service';
+import { BaseApiService } from './services/base.api.service';
 import { AuthGuard } from './guards/auth.guard'
 import { AlertService } from './services/alert.service';
 import { AuthenticationService } from './services/authentication.service';
@@ -41,9 +42,10 @@ import { AuthenticationService } from './services/authentication.service';
   ],
   providers: [
     ElectronService,
-    AuthGuard,
     AlertService,
+    BaseApiService,
     AuthenticationService,
+    AuthGuard,
   ],
   bootstrap: [AppComponent]
 })
