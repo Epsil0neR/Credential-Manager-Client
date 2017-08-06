@@ -1,3 +1,5 @@
+import { environment } from './../../../environments/index';
+import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   title = `App works !`;
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    // TODO: Remove that http headings testing.
+    this.http.get(environment.GetFullPath('User'))
+      .map(x => x.text())
+      .subscribe(data => console.log('DATA: ', data))
+      ;
   }
 
 }

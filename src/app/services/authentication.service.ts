@@ -22,7 +22,7 @@ export class AuthenticationService {
 
       let dateString = response.headers.get(HeaderKey);
       environment.Expires = new Date(dateString);
-      environment.ApiKey = response.text();
+      environment.AuthId = response.text();
 
       return true;
     });
@@ -30,7 +30,7 @@ export class AuthenticationService {
 
   logout() {
     // TODO: Call API method /LogOut.
-    environment.ApiKey = null;
+    environment.AuthId = null;
     environment.Expires = null;
   }
 

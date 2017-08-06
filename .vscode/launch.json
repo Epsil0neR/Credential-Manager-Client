@@ -1,44 +1,81 @@
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+//     {
+//       "type": "node",
+//       "request": "launch",
+//       "name": "Launch via NPM",
+//       "runtimeExecutable": "npm.cmd",
+//       "runtimeArgs": [
+//         "run",
+//          "electron:serve"
+//       ],
+//       "port": 9222,
+//       "sourceMaps": true,
+//       "outFiles": [
+//         "${workspaceRoot}/dist/**.*.js"
+//       ],
+//       "cwd": "${workspaceRoot}",
+//       "console": "externalTerminal"
+
+//     // },
+//     // {
+//     //   "name": "Launch localhost with sourcemaps",
+//     //   "type": "chrome",
+//     //   "request": "launch",
+//     //   "url": "http://localhost:4200",
+//     //   "sourceMaps": true,
+//     //   "webRoot": "${workspaceRoot}"
+//     }
+//     // ,
+//     //     {
+//     //   "preLaunchTask": "build",
+//     //   "name": "Debug Main Process",
+//     //   "type": "node",
+//     //   "request": "launch",
+//     //   "cwd": "${workspaceRoot}",
+//     //   "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+//     //   "windows": {
+//     //     "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+//     //   },
+//     //   "runtimeArgs": [
+//     //     "--serve"
+//     //   ],
+//     //   "program": "${workspaceRoot}/dist/main.js",
+//     //   "protocol": "legacy"
+//     // } //,
+//     // {
+//     //   "name": "Debug Renderer Process",
+//     //   "type": "chrome",
+//     //   "request": "launch",
+//     //   "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+//     //   "windows": {
+//     //     "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+//     //   },
+//     //   "runtimeArgs": [
+//     //     "${workspaceRoot}/dist/main.js",
+//     //     "--remote-debugging-port=9222"
+//     //   ],
+//     //   "webRoot": "${workspaceRoot}/dist"
+//     // }
+//   ]
+// }
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Gulp build:electron:main",
-            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
-            "args": [
-                "build:electron:main"
-            ]
-        },
-        {
-            "preLaunchTask": "build",
-            "name": "Debug Main Process",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceRoot}",
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-            "windows": {
-                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
-            },
-            "runtimeArgs": [
-                "--serve"
-            ],
-            "program": "${workspaceRoot}/dist/main.js",
-            "protocol": "legacy"
-        } //,
-        // {
-        //   "name": "Debug Renderer Process",
-        //   "type": "chrome",
-        //   "request": "launch",
-        //   "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-        //   "windows": {
-        //     "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
-        //   },
-        //   "runtimeArgs": [
-        //     "${workspaceRoot}/dist/main.js",
-        //     "--remote-debugging-port=9222"
-        //   ],
-        //   "webRoot": "${workspaceRoot}/dist"
-        // }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Renderer Process",
+      "type": "chrome",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+      "windows": {
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+      },
+      "runtimeArgs": [
+        "${workspaceRoot}/dist/main.js",
+        "--remote-debugging-port=9222"
+      ],
+      "webRoot": "${workspaceRoot}"
+    }
+  ]
 }
