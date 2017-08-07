@@ -48,7 +48,8 @@ import { RequestOptionsService } from './services/requestsoptions.service';
     BaseApiService,
     AuthenticationService,
     AuthGuard,
-    { provide: RequestOptions, useClass: RequestOptionsService}
+    { provide: RequestOptions, useClass: RequestOptionsService},
+    // RequestOptionsService
   ],
   bootstrap: [AppComponent]
 })
